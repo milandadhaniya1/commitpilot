@@ -1,0 +1,81 @@
+{
+  "openai": {
+    "url": "https://api.openai.com/v1/chat/completions",
+    "models": [
+      "gpt-4o",
+      "gpt-4o-mini",
+      "gpt-4.5-preview",
+      "gpt-4-turbo",
+      "gpt-4",
+      "gpt-3.5-turbo",
+      "o1",
+      "o1-mini",
+      "o3-mini"
+    ]
+  },
+  "anthropic": {
+    "url": "https://api.anthropic.com/v1/messages",
+    "models": [
+      "claude-opus-4-5",
+      "claude-sonnet-4-5",
+      "claude-3-5-sonnet-20241022",
+      "claude-3-5-haiku-20241022",
+      "claude-3-opus-20240229",
+      "claude-3-sonnet-20240229",
+      "claude-3-haiku-20240307"
+    ]
+  },
+  "groq": {
+    "url": "https://api.groq.com/openai/v1/chat/completions",
+    "models": [
+      "llama-3.3-70b-versatile",
+      "llama-3.1-70b-versatile",
+      "llama-3.1-8b-instant",
+      "llama3-70b-8192",
+      "llama3-8b-8192",
+      "mixtral-8x7b-32768",
+      "gemma2-9b-it",
+      "gemma-7b-it",
+      "deepseek-r1-distill-llama-70b",
+      "qwen-qwq-32b"
+    ]
+  },
+  "deepseek": {
+    "url": "https://api.deepseek.com/v1/chat/completions",
+    "models": [
+      "deepseek-chat",
+      "deepseek-reasoner"
+    ]
+  },
+  "gemini": {
+    "url": "https://generativelanguage.googleapis.com/v1beta/models",
+    "models": [
+      "gemini-2.0-flash",
+      "gemini-2.0-flash-lite",
+      "gemini-2.0-pro-exp",
+      "gemini-2.5-pro-exp-03-25",
+      "gemini-1.5-pro",
+      "gemini-1.5-flash",
+      "gemini-1.5-flash-8b"
+    ]
+  },
+  "ollama": {
+    "url": "http://localhost:11434/api/generate",
+    "models": [
+      "llama3.3",
+      "llama3.2",
+      "llama3.1",
+      "llama3",
+      "mistral",
+      "mistral-nemo",
+      "codellama",
+      "deepseek-r1",
+      "qwen2.5-coder",
+      "phi4",
+      "phi3",
+      "gemma3",
+      "gemma2",
+      "nomic-embed-text"
+    ]
+  }
+}
