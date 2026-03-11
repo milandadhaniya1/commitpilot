@@ -1,7 +1,8 @@
 {
-  "name": "commitpilot",
+  "name": "@milandadhaniya/commitpilot",
   "version": "1.0.0",
   "description": "AI powered git commit and PR description generator",
+  "main": "./bin/commitpilot.js",
   "bin": {
     "commitpilot": "./bin/commitpilot.js"
   },
@@ -11,7 +12,15 @@
     "commit",
     "ai",
     "cli",
-    "conventional-commit"
+    "conventional-commit",
+    "commit-message",
+    "pull-request",
+    "openai",
+    "anthropic",
+    "gemini",
+    "ollama",
+    "groq",
+    "deepseek"
   ],
   "author": "Milan Dadhaniya <milan.dadhaniya@gmail.com>",
   "license": "MIT",
@@ -19,6 +28,19 @@
     "type": "git",
     "url": "https://github.com/milandadhaniya1/commitpilot.git"
   },
+  "bugs": {
+    "url": "https://github.com/milandadhaniya1/commitpilot/issues"
+  },
+  "homepage": "https://github.com/milandadhaniya1/commitpilot#readme",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "files": [
+    "bin/",
+    "src/",
+    "README.md",
+    "LICENSE"
+  ],
   "dependencies": {
     "chalk": "^5.3.0",
     "inquirer": "^9.2.7",

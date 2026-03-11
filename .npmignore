@@ -1,0 +1,27 @@
+# Development files
+.git
+.gitignore
+.DS_Store
+
+# IDE
+.vscode
+.idea
+
+# Testing
+test/
+tests/
+*.test.js
+*.spec.js
+
+# CI/CD
+.github
+.gitlab-ci.yml
+.travis.yml
+
+# Documentation
+docs/
+examples/
+
+# Misc
+.env
+.env.local

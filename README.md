@@ -6,6 +6,8 @@ CommitPilot analyzes staged git changes and generates high quality commit messag
 
 Supports multiple AI providers including OpenAI, Groq, Anthropic, DeepSeek, Google Gemini, and free local models via Ollama.
 
+📦 **npm package**: https://www.npmjs.com/package/@milandadhaniya/commitpilot
+
 ---
 
 # Features
@@ -26,13 +28,13 @@ Supports multiple AI providers including OpenAI, Groq, Anthropic, DeepSeek, Goog
 Install globally
 
 ```
-npm install -g commitpilot
+npm install -g @milandadhaniya/commitpilot
 ```
 
 Or run with npx
 
 ```
-npx commitpilot
+npx @milandadhaniya/commitpilot
 ```
 
 ---
