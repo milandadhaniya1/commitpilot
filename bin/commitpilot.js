@@ -64,17 +64,17 @@ async function main() {
 
     const lines = message.split("\n");
     const title = lines[0];
-    const body = lines.slice(1).join("\n").trim();
+    const bodyLines = lines.slice(1).filter(line => line.trim());
 
-    if (body) {
-      execSync(`git commit -m ${JSON.stringify(title)} -m ${JSON.stringify(body)}`, {
-        stdio: "inherit"
-      });
-    } else {
-      execSync(`git commit -m ${JSON.stringify(title)}`, {
-        stdio: "inherit"
-      });
+    const args = [`-m`, title];
+    
+    if (bodyLines.length > 0) {
+      args.push(`-m`, bodyLines.join("\n"));
     }
+
+    execSync(`git commit ${args.map(arg => JSON.stringify(arg)).join(" ")}`, {
+      stdio: "inherit"
+    });
 
   }
 
