@@ -5,7 +5,7 @@ import inquirer from "inquirer";
 import { getDiff } from "../src/git.js";
 import { generateCommit, generatePR } from "../src/ai.js";
 import { loadConfig, initConfig } from "../src/config.js";
-import { execSync } from "node:child_process";
+import { execFileSync } from "node:child_process";
 
 async function main() {
 
@@ -66,13 +66,13 @@ async function main() {
     const title = lines[0];
     const bodyLines = lines.slice(1).filter(line => line.trim());
 
-    const args = [`-m`, title];
+    const args = ["commit", "-m", title];
     
     if (bodyLines.length > 0) {
-      args.push(`-m`, bodyLines.join("\n"));
+      args.push("-m", bodyLines.join("\n"));
     }
 
-    execSync(`git commit ${args.map(arg => JSON.stringify(arg)).join(" ")}`, {
+    execFileSync("git", args, {
       stdio: "inherit"
     });
 
