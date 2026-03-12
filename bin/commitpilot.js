@@ -46,37 +46,55 @@ async function main() {
     return;
   }
 
-  const message = await generateCommit(diff, config);
+  let message = await generateCommit(diff, config);
 
   console.log(chalk.green("Suggested commit:\n"));
   console.log(message);
 
-  const { confirm } = await inquirer.prompt([
+  const { action } = await inquirer.prompt([
     {
-      type: "confirm",
-      name: "confirm",
-      message: "Use this commit message?",
-      default: true
+      type: "list",
+      name: "action",
+      message: "What would you like to do?",
+      choices: [
+        { name: "Use this message", value: "use" },
+        { name: "Edit message", value: "edit" },
+        { name: "Cancel", value: "cancel" }
+      ],
+      default: "use"
     }
   ]);
 
-  if (confirm) {
-
-    const lines = message.split("\n");
-    const title = lines[0];
-    const bodyLines = lines.slice(1).filter(line => line.trim());
-
-    const args = ["commit", "-m", title];
-    
-    if (bodyLines.length > 0) {
-      args.push("-m", bodyLines.join("\n"));
-    }
-
-    execFileSync("git", args, {
-      stdio: "inherit"
-    });
-
+  if (action === "cancel") {
+    console.log(chalk.yellow("Commit cancelled"));
+    process.exit(0);
   }
+
+  if (action === "edit") {
+    const { editedMessage } = await inquirer.prompt([
+      {
+        type: "editor",
+        name: "editedMessage",
+        message: "Edit the commit message:",
+        default: message
+      }
+    ]);
+    message = editedMessage;
+  }
+
+  const lines = message.split("\n");
+  const title = lines[0];
+  const bodyLines = lines.slice(1).filter(line => line.trim());
+
+  const args = ["commit", "-m", title];
+  
+  if (bodyLines.length > 0) {
+    args.push("-m", bodyLines.join("\n"));
+  }
+
+  execFileSync("git", args, {
+    stdio: "inherit"
+  });
 
 }
 
