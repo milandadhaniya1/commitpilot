@@ -96,14 +96,29 @@ commitpilot
 Example output:
 
 ```
+────────────────────────────────────────────────────────────
+
+Suggested commit:
+
 feat(auth): implement refresh token authentication
 
 * Added refresh token endpoint
 * Updated JWT middleware
 * Improved token validation logic
+
+────────────────────────────────────────────────────────────
+
+What would you like to do?
+❯ Use this message
+  Edit message
+  Cancel
 ```
 
-Confirm the suggestion and the commit will be created automatically.
+Choose from three options:
+
+* **Use this message** - Creates the commit with the AI-generated message
+* **Edit message** - Opens your default editor to modify the message before committing
+* **Cancel** - Aborts the commit
 
 ---
 

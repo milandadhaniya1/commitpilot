@@ -48,18 +48,20 @@ async function main() {
 
   let message = await generateCommit(diff, config);
 
+  console.log("\n" + chalk.cyan("─".repeat(60)) + "\n");
   console.log(chalk.green("Suggested commit:\n"));
   console.log(message);
+  console.log("\n" + chalk.cyan("─".repeat(60)) + "\n");
 
   const { action } = await inquirer.prompt([
     {
       type: "list",
       name: "action",
-      message: "What would you like to do?",
+      message: chalk.bold.cyan("What would you like to do?"),
       choices: [
-        { name: "Use this message", value: "use" },
-        { name: "Edit message", value: "edit" },
-        { name: "Cancel", value: "cancel" }
+        { name: chalk.green("Use this message"), value: "use" },
+        { name: chalk.yellow("Edit message"), value: "edit" },
+        { name: chalk.red("Cancel"), value: "cancel" }
       ],
       default: "use"
     }
